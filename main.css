@@ -1,0 +1,91 @@
+/* General styling */
+html {
+    background-color: black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    margin: 0;
+}
+
+.boardgame {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2%; /* Consistent gap relative to board size */
+    width: 80vw;  /* Responsive width */
+    max-width: 600px;  /* Maximum width limit */
+    aspect-ratio: 1;  /* Keep the grid square */
+    margin-bottom: 5%; /* Add some space below the board */
+    box-sizing: border-box;
+}
+
+.cell {
+    background-color: rgb(39, 51, 51);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;  /* Consistent font size based on cell size */
+    color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    border-radius: 10px; /* Optional: Add some rounding to cells */
+    box-sizing: border-box;
+}
+
+.cell.selected {
+    color: white;
+}
+
+button {
+    padding: 1em 2em;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5em;  /* Responsive font size */
+    max-width: 200px; /* Limit button width */
+    margin-bottom: 2%; /* Add space between buttons and other elements */
+}
+
+button:hover {
+    background-color: #4CAF50;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw; /* Same as board width */
+    max-width: 600px;
+    margin-bottom: 5%; /* Add space between scores and other elements */
+    font-size: 1.5em; /* Keep score font size consistent */
+}
+
+#X, #O {
+    color: white;
+}
+
+#X:hover, #O:hover {
+    text-decoration: underline;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw; /* Same as board width */
+    max-width: 600px;
+}
+
+@media screen and (max-width: 760px) {
+    .cell {
+        font-size: 3em;  /* Adjust font size for smaller screens */
+    }
+
+    .scores, button {
+        font-size: 1.2em;  /* Adjust score and button font size */
+    }
+}
